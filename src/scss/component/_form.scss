@@ -1,0 +1,187 @@
+// Form wrapper
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  width: 360px;
+  animation: slideFadeIn 1s ease-out forwards;
+
+  @include tab {
+    margin-left: unset;
+    max-width: 299px;
+  }
+}
+
+// Title
+.form-title {
+  color: #344054;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  text-align: left;
+  margin-bottom: 8px;
+
+  @include tab {
+    font-size: 32px;
+  }
+}
+
+// Text
+.form-text {
+  color: #667085;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 56px;
+
+  @include tab {
+    font-size: 14px;
+  }
+}
+
+// Main form styles
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+
+  &-label {
+    color: var(--Secondary-Color, #344054);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+
+    img {
+      position: absolute;
+      right: 14px;
+      top: 39px;
+      width: unset;
+    }
+  }
+
+  .input {
+    border-radius: 8px;
+    border: 1px solid #d0d5dd;
+    padding: 10px 14px;
+    color: var(--Accent-2, #667085);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 20px;
+
+    ::placeholder {
+      color: var(--Accent-2, #667085);
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .checkbox {
+    flex-direction: row;
+    color: var(--Secondary-Color, #344054);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  &-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--Accent-1, #d0d5dd);
+  }
+
+  &-link {
+    color: var(--Primary-Color, #5429ff);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  &-submit {
+    color: #fff;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    display: block;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: var(--Primary-Color, #5429ff);
+    border-color: transparent;
+    margin-bottom: 16px;
+
+    &:hover {
+      transform: scale(1.03);
+      background-color: #5f3dc4;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &-log {
+    color: var(--Secondary-Color, #344054);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 10px 45px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid var(--Accent-1, #d0d5dd);
+    position: relative;
+
+    &:hover {
+      transform: scale(1.03);
+      transition: all 0.3s ease;
+    }
+
+    @include tab {
+      padding: 10px 70px;
+    }
+
+    img {
+      position: absolute;
+      left: 85px;
+      bottom: 9px;
+      width: unset;
+
+      @include tab {
+        left: 40px;
+      }
+    }
+  }
+}
+
+// Register prompt
+.form-register {
+  color: var(--Secondary-Color, #344054);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 20px;
+
+  span {
+    color: var(--Primary-Color, #5429ff);
+    font-weight: 500;
+    line-height: 20px;
+  }
+}

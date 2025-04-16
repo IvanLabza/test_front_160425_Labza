@@ -1,68 +1,456 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@-webkit-keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes slideFadeOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideFadeOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  text-decoration: none;
 }
 
-body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+button,
+a {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+svg {
+  display: block;
+  width: unset;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 980px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 100px;
   }
-  a:hover {
-    color: #747bff;
+}
+
+.head-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 17px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.head-link span {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.16px;
+}
+.head-link img {
+  width: unset;
+}
+
+.form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 100px;
+  width: 360px;
+  -webkit-animation: slideFadeIn 1s ease-out forwards;
+          animation: slideFadeIn 1s ease-out forwards;
+}
+@media screen and (max-width: 980px) {
+  .form-wrapper {
+    margin-left: unset;
+    max-width: 299px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+.form-title {
+  color: #344054;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  text-align: left;
+  margin-bottom: 8px;
+}
+@media screen and (max-width: 980px) {
+  .form-title {
+    font-size: 32px;
   }
+}
+
+.form-text {
+  color: #667085;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 56px;
+}
+@media screen and (max-width: 980px) {
+  .form-text {
+    font-size: 14px;
+  }
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 360px;
+}
+.form-label {
+  color: var(--Secondary-Color, #344054);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.form-label img {
+  position: absolute;
+  right: 14px;
+  top: 39px;
+  width: unset;
+}
+.form .input {
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  padding: 10px 14px;
+  color: var(--Accent-2, #667085);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+.form .input ::-webkit-input-placeholder {
+  color: var(--Accent-2, #667085);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.form .input ::-moz-placeholder {
+  color: var(--Accent-2, #667085);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.form .input :-ms-input-placeholder {
+  color: var(--Accent-2, #667085);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.form .input ::-ms-input-placeholder {
+  color: var(--Accent-2, #667085);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.form .input ::placeholder {
+  color: var(--Accent-2, #667085);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.form .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 32px;
+}
+.form .checkbox {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: var(--Secondary-Color, #344054);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.form-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--Accent-1, #d0d5dd);
+}
+.form-link {
+  color: var(--Primary-Color, #5429ff);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.form-submit {
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  display: block;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background: var(--Primary-Color, #5429ff);
+  border-color: transparent;
+  margin-bottom: 16px;
+}
+.form-submit:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  background-color: #5f3dc4;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.form-log {
+  color: var(--Secondary-Color, #344054);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 10px 45px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid var(--Accent-1, #d0d5dd);
+  position: relative;
+}
+.form-log:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 980px) {
+  .form-log {
+    padding: 10px 70px;
+  }
+}
+.form-log img {
+  position: absolute;
+  left: 85px;
+  bottom: 9px;
+  width: unset;
+}
+@media screen and (max-width: 980px) {
+  .form-log img {
+    left: 40px;
+  }
+}
+
+.form-register {
+  color: var(--Secondary-Color, #344054);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 20px;
+}
+.form-register span {
+  color: var(--Primary-Color, #5429ff);
+  font-weight: 500;
+  line-height: 20px;
+}
+
+footer {
+  color: var(--Accent-2, #667085);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 20px;
+}
+@media screen and (max-width: 376px) {
+  footer {
+    display: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 32px;
+  margin: 0 auto;
+  background-color: #222121;
+}
+@media screen and (max-width: 376px) {
+  .container {
+    padding: 10px;
+  }
+}
+.container .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 50px;
+  padding: 32px;
+  max-width: 1376px;
+  margin: 0 auto;
+  border-radius: 44px;
+  background: #fcfdff;
+}
+@media screen and (max-width: 1000px) {
+  .container .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.container .wrapper .wrapper__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 70px;
+}
+@media screen and (max-width: 1000px) {
+  .container .wrapper .wrapper__desc {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+.container .wrapper .image-container {
+  max-width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: slideFadeOut 1s ease-out forwards;
+          animation: slideFadeOut 1s ease-out forwards;
+}
+@media screen and (max-width: 1000px) {
+  .container .wrapper .image-container {
+    display: none;
+  }
+}
+
+.wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 15px;
 }

@@ -1,0 +1,57 @@
+@import "./scss/vendors/mixin";
+@import "./scss/vendors/animation";
+
+@import "./scss/components/reset";
+@import "./scss/components/header";
+@import "./scss/components/form";
+@import "./scss/components/footer";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 32px;
+  margin: 0 auto;
+  background-color: #222121;
+  @include tel() {
+    padding: 10px;
+  }
+  .wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 32px;
+    border-radius: 44px;
+    background: #fcfdff;
+    @include tab {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .wrapper__desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 70px;
+      @include tab() {
+        order: 2;
+      }
+    }
+    .image-container {
+      max-width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: slideFadeOut 1s ease-out forwards;
+
+      @include tab() {
+        display: none;
+      }
+    }
+  }
+}

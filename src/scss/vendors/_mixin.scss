@@ -1,0 +1,23 @@
+@mixin tab {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin tab-min {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tel-min {
+  @media screen and (max-width: 450px) {
+    @content;
+  }
+}
+
+@mixin tel {
+  @media screen and (max-width: 376px) {
+    @content;
+  }
+}
